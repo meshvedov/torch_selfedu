@@ -36,3 +36,8 @@ for _ in range(1000):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
+
+model.eval()
+for x, d in zip(x_train, y_train):
+    y = model(x)
+    print(f"{y.data} ==> {d:5}")
